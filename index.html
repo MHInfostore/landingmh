@@ -9,16 +9,55 @@
         content="Assistência técnica de PCs, notebooks e celulares, PC Gamer, recuperação de dados, certificado digital e gráfica em Taguatinga Norte, Brasília - DF.">
     <meta name="theme-color" content="#060913">
 
-    <!-- TROQUE seudominio.com.br pelo endereço real do site -->
-    <link rel="canonical" href="https://seudominio.com.br/">
+    <!-- Canonical & OpenGraph com endereço real do GitHub Pages -->
+    <link rel="canonical" href="https://mhinfostore.github.io/landingmh/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seudominio.com.br/">
+    <meta property="og:url" content="https://mhinfostore.github.io/landingmh/">
     <meta property="og:title" content="MH Infostore - Soluções em TI & Comunicação Visual">
     <meta property="og:description"
         content="Assistência Técnica de PCs, Notebooks, PC Gamer, Recuperação de Dados e Gráfica em Taguatinga Norte.">
-    <meta property="og:image" content="https://seudominio.com.br/og-preview.jpg">
+    <meta property="og:image" content="https://mhinfostore.github.io/landingmh/og-preview.jpg">
     <meta property="og:locale" content="pt_BR">
     <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Local Business Schema (Indexação para Google Busca & Maps) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComputerStore",
+      "name": "MH Infostore e Telecom",
+      "url": "https://mhinfostore.github.io/landingmh/",
+      "image": "https://mhinfostore.github.io/landingmh/logo.png",
+      "telephone": "+55-61-3042-6739",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "QNL 24 Via 29 Lote 87, Loja 01",
+        "addressLocality": "Taguatinga Norte",
+        "addressRegion": "DF",
+        "postalCode": "72161-429",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -15.820366,
+        "longitude": -48.093771
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ]
+    }
+    </script>
 
     <link rel="icon" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -64,7 +103,7 @@
             outline-offset: 3px
         }
 
-        /* ----- Ícones locais via CSS Mask (respeitam currentColor e font-size) ----- */
+        /* ----- Ícones locais via CSS Mask (currentColor) ----- */
         .ico {
             display: inline-block;
             width: 1em;
@@ -231,16 +270,28 @@
             right: -50px
         }
 
+        /* Partículas com Outlines Unificados */
         .geo-particle {
             position: absolute;
-            border: 1px solid rgba(0, 210, 255, .35);
-            background: rgba(0, 210, 255, .05);
-            animation: floatShape linear infinite
+            top: 0;
+            opacity: 0;
+            animation: floatShape linear infinite both;
+            pointer-events: none;
+        }
+
+        .geo-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            stroke: rgba(0, 210, 255, .35);
+            stroke-width: 1.5;
+            fill: rgba(0, 210, 255, .05);
+            stroke-linejoin: round;
         }
 
         @keyframes floatShape {
             0% {
-                transform: translateY(105vh) rotate(0);
+                transform: translateY(105vh) rotate(0deg);
                 opacity: 0
             }
 
@@ -1000,6 +1051,22 @@
         }
 
         /* ---------- Mobile ---------- */
+        @media (max-width:768px) {
+            .geo-particle {
+                display: none !important;
+                animation: none !important;
+            }
+
+            #particleContainer {
+                display: none !important;
+            }
+
+            .glow-orb {
+                filter: blur(60px);
+                opacity: .08;
+            }
+        }
+
         @media (max-width:600px) {
             .app-container {
                 padding: 24px 16px 48px;
@@ -1114,6 +1181,7 @@
         <div id="particleContainer"></div>
     </div>
 
+    <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/556130426739" data-wa="Olá! Gostaria de tirar uma dúvida sobre os serviços." target="_blank"
         rel="noopener noreferrer" class="floating-whatsapp" title="Falar no WhatsApp" aria-label="Falar no WhatsApp"><i
             class="ico ico-whatsapp"></i></a>
@@ -1127,7 +1195,7 @@
             <div class="contact-bar">
                 <a href="https://wa.me/556130426739" target="_blank" rel="noopener noreferrer" class="contact-chip"><i
                         class="ico ico-whatsapp"></i>WhatsApp</a>
-                <a href="https://instagram.com/mhinfostore" target="_blank" rel="noopener noreferrer"
+                <a href="https://instagram.com/infostoremh" target="_blank" rel="noopener noreferrer"
                     class="contact-chip"><i class="ico ico-instagram"></i>Instagram</a>
                 <a href="tel:+556130426739" class="contact-chip"><i class="ico ico-phone"></i>(61) 3042-6739</a>
                 <a href="https://maps.app.goo.gl/yqJi5HXobHuqzFy96" target="_blank" rel="noopener noreferrer"
@@ -1488,20 +1556,51 @@
     </div>
 
     <script>
-        /* ---- Partículas ---- */
+        /* ---- Partículas (apenas em telas maiores) ---- */
         (function () {
+            if (window.matchMedia('(max-width: 768px)').matches) return;
             const c = document.getElementById('particleContainer');
-            for (let i = 0; i < 18; i++) {
-                const s = document.createElement('div'), z = Math.random() * 20 + 8;
+            if (!c) return;
+
+            const SHAPES = [
+                '<svg class="geo-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/></svg>',
+                '<svg class="geo-svg" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/></svg>',
+                '<svg class="geo-svg" viewBox="0 0 24 24"><polygon points="12,2 22.5,21 1.5,21"/></svg>'
+            ];
+
+            const COUNT = 18;
+            const laneWidth = 100 / COUNT;
+
+            const lanes = Array.from({ length: COUNT }, (_, i) => i);
+            for (let i = lanes.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [lanes[i], lanes[j]] = [lanes[j], lanes[i]];
+            }
+
+            for (let i = 0; i < COUNT; i++) {
+                const shapeIndex = i % 3;
+                const isTriangle = shapeIndex === 2;
+
+                const baseSize = Math.random() * 12 + 12;
+                const size = isTriangle ? Math.round(baseSize * 1.15) : Math.round(baseSize);
+
+                const lane = lanes[i];
+                const jitter = (Math.random() * 0.7 + 0.15) * laneWidth;
+                const left = Math.min(96, Math.max(2, +(lane * laneWidth + jitter).toFixed(2)));
+
+                const dur = +(Math.random() * 8 + 12).toFixed(1);
+                const baseDelay = (i / COUNT) * dur;
+                const delay = +(baseDelay + (Math.random() - 0.5) * 2).toFixed(1);
+
+                const s = document.createElement('div');
                 s.className = 'geo-particle';
-                if (Math.random() > .5) { s.style.borderRadius = '3px' } else { s.style.borderRadius = '50%' }
-                s.style.cssText += `width:${z}px;height:${z}px;left:${Math.random() * 100}%;animation-duration:${Math.random() * 12 + 10}s;animation-delay:${Math.random() * 8}s`;
+                s.innerHTML = SHAPES[shapeIndex];
+                s.style.cssText = `width:${size}px;height:${size}px;left:${left}%;animation-duration:${dur}s;animation-delay:-${delay}s;`;
                 c.appendChild(s);
             }
         })();
 
-        /* ---- Links do WhatsApp: monta ?text= com encodeURIComponent ----
-           O href estático (sem mensagem) continua funcionando se o JS falhar. */
+        /* ---- Links do WhatsApp: monta ?text= com encodeURIComponent ---- */
         document.querySelectorAll('a[data-wa]').forEach(a => {
             a.href = a.getAttribute('href').split('?')[0] + '?text=' + encodeURIComponent(a.dataset.wa);
         });
@@ -1547,13 +1646,12 @@
         });
 
         /* ---- Status da loja (fuso de Brasília, feriados, próximo horário) ---- */
-        const HOURS = { 1: [8, 18], 2: [8, 18], 3: [8, 18], 4: [8, 18], 5: [8, 18], 6: [8, 14] }; // 0=Dom (fechado)
-        // Dias FECHADOS (AAAA-MM-DD). Confira/edite esta lista.
+        const HOURS = { 1: [8, 18], 2: [8, 18], 3: [8, 18], 4: [8, 18], 5: [8, 18], 6: [8, 14] };
         const CLOSED_DATES = [
             '2026-11-02', // Finados
             '2026-11-20', // Consciência Negra
             '2026-11-30', // Dia do Evangélico (DF)
-            '2026-12-24', '2026-12-25', '2026-12-31', // confirme Natal/Ano Novo
+            '2026-12-24', '2026-12-25', '2026-12-31',
             '2027-01-01'
         ];
         const DAYS = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
