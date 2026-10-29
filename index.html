@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Infostore | Tecnologia & Gráfica em Taguatinga</title>
+    <meta name="description"
+        content="Assistência técnica de PCs, notebooks e celulares, PC Gamer, recuperação de dados, certificado digital e gráfica em Taguatinga Norte, Brasília - DF.">
+    <meta name="theme-color" content="#060913">
+
+    <!-- TROQUE seudominio.com.br pelo endereço real do site -->
+    <link rel="canonical" href="https://seudominio.com.br/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seudominio.com.br/">
+    <meta property="og:title" content="MH Infostore - Soluções em TI & Comunicação Visual">
+    <meta property="og:description"
+        content="Assistência Técnica de PCs, Notebooks, PC Gamer, Recuperação de Dados e Gráfica em Taguatinga Norte.">
+    <meta property="og:image" content="https://seudominio.com.br/og-preview.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #060913;
+            --surface-card: rgba(15, 23, 42, .75);
+            --surface-subcard: rgba(255, 255, 255, .035);
+            --surface-border: rgba(255, 255, 255, .08);
+            --brand-cyan: #00D2FF;
+            --text-primary: #FFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            background: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--brand-cyan);
+            outline-offset: 3px
+        }
+
+        /* ----- Ícones locais via CSS Mask (respeitam currentColor e font-size) ----- */
+        .ico {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            -webkit-mask: var(--i) no-repeat center/contain;
+            mask: var(--i) no-repeat center/contain;
+            vertical-align: -.125em;
+            flex-shrink: 0
+        }
+
+        .ico-address-card {
+            --i: url('icons/address-card.svg')
+        }
+
+        .ico-arrow-right {
+            --i: url('icons/arrow-right.svg')
+        }
+
+        .ico-bolt {
+            --i: url('icons/bolt.svg')
+        }
+
+        .ico-brush {
+            --i: url('icons/brush.svg')
+        }
+
+        .ico-building {
+            --i: url('icons/building.svg')
+        }
+
+        .ico-bullhorn {
+            --i: url('icons/bullhorn.svg')
+        }
+
+        .ico-chart-line {
+            --i: url('icons/chart-line.svg')
+        }
+
+        .ico-chevron-right {
+            --i: url('icons/chevron-right.svg')
+        }
+
+        .ico-circle-check {
+            --i: url('icons/circle-check.svg')
+        }
+
+        .ico-clock {
+            --i: url('icons/clock.svg')
+        }
+
+        .ico-copy {
+            --i: url('icons/copy.svg')
+        }
+
+        .ico-credit-card {
+            --i: url('icons/credit-card.svg')
+        }
+
+        .ico-desktop {
+            --i: url('icons/desktop.svg')
+        }
+
+        .ico-gamepad {
+            --i: url('icons/gamepad.svg')
+        }
+
+        .ico-headset {
+            --i: url('icons/headset.svg')
+        }
+
+        .ico-instagram {
+            --i: url('icons/instagram.svg')
+        }
+
+        .ico-location-dot {
+            --i: url('icons/location-dot.svg')
+        }
+
+        .ico-lock {
+            --i: url('icons/lock.svg')
+        }
+
+        .ico-map-location-dot {
+            --i: url('icons/map-location-dot.svg')
+        }
+
+        .ico-pen-nib {
+            --i: url('icons/pen-nib.svg')
+        }
+
+        .ico-phone {
+            --i: url('icons/phone.svg')
+        }
+
+        .ico-print {
+            --i: url('icons/print.svg')
+        }
+
+        .ico-screwdriver-wrench {
+            --i: url('icons/screwdriver-wrench.svg')
+        }
+
+        .ico-shield-halved {
+            --i: url('icons/shield-halved.svg')
+        }
+
+        .ico-shop {
+            --i: url('icons/shop.svg')
+        }
+
+        .ico-store {
+            --i: url('icons/store.svg')
+        }
+
+        .ico-waze {
+            --i: url('icons/waze.svg')
+        }
+
+        .ico-whatsapp {
+            --i: url('icons/whatsapp.svg')
+        }
+
+        .ico-wifi {
+            --i: url('icons/wifi.svg')
+        }
+
+        .cyber-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden
+        }
+
+        .cyber-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(0, 210, 255, .02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 210, 255, .02) 1px, transparent 1px);
+            background-size: 60px 60px
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: .12
+        }
+
+        .orb-top {
+            width: 600px;
+            height: 600px;
+            background: #0066FF;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .orb-bottom {
+            width: 500px;
+            height: 500px;
+            background: #00D2FF;
+            bottom: -100px;
+            right: -50px
+        }
+
+        .geo-particle {
+            position: absolute;
+            border: 1px solid rgba(0, 210, 255, .35);
+            background: rgba(0, 210, 255, .05);
+            animation: floatShape linear infinite
+        }
+
+        @keyframes floatShape {
+            0% {
+                transform: translateY(105vh) rotate(0);
+                opacity: 0
+            }
+
+            10%,
+            90% {
+                opacity: .6
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0
+            }
+        }
+
+        .app-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 960px;
+            padding: 40px 20px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 32px
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center
+        }
+
+        .brand-logo {
+            width: 130px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 25px rgba(0, 210, 255, .35));
+            margin-bottom: 12px
+        }
+
+        .brand-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -.5px;
+            margin-bottom: 4px
+        }
+
+        .brand-slogan {
+            font-size: 1.05rem;
+            font-weight: 500;
+            opacity: .95;
+            margin-bottom: 24px
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .contact-chip {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: .95rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+            transition: all .2s ease
+        }
+
+        .contact-chip i {
+            font-size: 1.15rem
+        }
+
+        .tab-wrapper {
+            display: flex;
+            justify-content: center
+        }
+
+        .tab-nav {
+            display: flex;
+            background: rgba(15, 23, 42, .9);
+            border-radius: 14px;
+            padding: 5px;
+            border: 1px solid var(--surface-border);
+            gap: 6px;
+            width: 100%;
+            max-width: 480px
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: .92rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px
+        }
+
+        .tab-btn[aria-selected="true"] {
+            background: var(--brand-cyan);
+            color: #050811;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, .3)
+        }
+
+        .tab-panel {
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeIn .25s ease
+        }
+
+        .tab-panel:not([hidden]) {
+            display: flex
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .hero-action {
+            background: linear-gradient(135deg, #065F46, #047857 50%, #064E3B);
+            border: 1px solid rgba(16, 185, 129, .3);
+            color: #FFF;
+            padding: 16px 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 8px 24px rgba(4, 120, 87, .35);
+            transition: all .2s ease
+        }
+
+        .hero-action-left {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .hero-action-left i {
+            font-size: 1.6rem
+        }
+
+        .hero-sub {
+            font-size: .8rem;
+            opacity: .9;
+            font-weight: 500
+        }
+
+        .pillar-card {
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            border-radius: 18px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            backdrop-filter: blur(12px)
+        }
+
+        .pillar-card.prominent {
+            border-color: rgba(0, 210, 255, .35);
+            background: linear-gradient(180deg, rgba(15, 23, 42, .9), rgba(11, 20, 38, .8));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .4)
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            padding-bottom: 14px;
+            gap: 12px
+        }
+
+        .pillar-title-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px
+        }
+
+        .pillar-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(0, 210, 255, .1);
+            color: var(--brand-cyan);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(0, 210, 255, .2);
+            font-size: 1.1rem;
+            flex-shrink: 0
+        }
+
+        .pillar-title-wrap h2 {
+            font-size: 1.18rem;
+            font-weight: 800;
+            letter-spacing: -.3px;
+            line-height: 1.15;
+            margin-top: 1px
+        }
+
+        .pillar-title-wrap p {
+            font-size: .82rem;
+            color: var(--text-secondary);
+            margin-top: 4px
+        }
+
+        .pillar-tag {
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(0, 210, 255, .15);
+            color: var(--brand-cyan);
+            border: 1px solid rgba(0, 210, 255, .3);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-top: 2px;
+            flex-shrink: 0
+        }
+
+        .service-grid-6 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px
+        }
+
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: var(--surface-subcard);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all .2s ease;
+            border: 1px solid transparent
+        }
+
+        .service-row-content h3 {
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 3px
+        }
+
+        .service-row-content p {
+            font-size: .82rem;
+            color: var(--text-secondary);
+            line-height: 1.35
+        }
+
+        .service-row-arrow {
+            color: var(--text-muted);
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-left: 10px;
+            transition: color .2s ease, transform .2s ease
+        }
+
+        .pillars-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px
+        }
+
+        .trust-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, .25);
+            border: 1px solid var(--surface-border);
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        .trust-point {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .82rem;
+            color: var(--text-secondary);
+            font-weight: 600
+        }
+
+        .trust-point i {
+            color: var(--brand-cyan);
+            font-size: 1rem
+        }
+
+        .biz-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 16px 20px;
+            border-radius: 14px;
+            background: var(--surface-card);
+            border: 1px solid rgba(0, 210, 255, .25);
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all .2s ease
+        }
+
+        .biz-row .biz-left {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .biz-row .biz-left>i {
+            color: var(--brand-cyan);
+            font-size: 1.3rem
+        }
+
+        .biz-row strong {
+            display: block;
+            font-size: .95rem;
+            font-weight: 800
+        }
+
+        .biz-row span {
+            font-size: .82rem;
+            color: var(--text-secondary)
+        }
+
+        .location-section {
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            border-radius: 18px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            backdrop-filter: blur(12px)
+        }
+
+        .map-embed-wrap {
+            width: 100%;
+            height: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--surface-border)
+        }
+
+        .map-embed-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block
+        }
+
+        .location-body {
+            display: flex;
+            flex-direction: column
+        }
+
+        .location-body h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -.3px
+        }
+
+        .location-body h3 i {
+            color: var(--brand-cyan)
+        }
+
+        .address-box {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: left;
+            color: inherit;
+            background: rgba(255, 255, 255, .025);
+            border: 1px dashed rgba(255, 255, 255, .12);
+            border-radius: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: all .2s ease
+        }
+
+        .address-line {
+            font-size: .9rem;
+            font-weight: 500;
+            color: #E2E8F0;
+            line-height: 1.45
+        }
+
+        .copy-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: .72rem;
+            color: var(--brand-cyan);
+            margin-top: 6px;
+            font-weight: 600;
+            opacity: .85
+        }
+
+        .copy-toast {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.9);
+            background: #00D2FF;
+            color: #050811;
+            font-size: .82rem;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, .4);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .2s ease;
+            white-space: nowrap
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1)
+        }
+
+        .location-divider {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, .08);
+            margin: 14px 0 10px
+        }
+
+        .schedule-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: .86rem;
+            color: var(--text-secondary);
+            line-height: 1.5
+        }
+
+        .schedule-line i {
+            color: var(--brand-cyan);
+            font-size: 1.15rem;
+            flex-shrink: 0
+        }
+
+        .status-button {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: .88rem;
+            font-weight: 700;
+            margin-top: 14px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            color: #94A3B8
+        }
+
+        .status-button.open {
+            background: linear-gradient(135deg, #065F46, #047857 50%, #064E3B);
+            border-color: rgba(16, 185, 129, .35);
+            color: #FFF;
+            box-shadow: 0 4px 15px rgba(4, 120, 87, .3)
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #64748B
+        }
+
+        .status-button.open .status-dot {
+            background: #25D366;
+            box-shadow: 0 0 8px #25D366;
+            animation: pulseDot 2s infinite
+        }
+
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                transform: scale(.95);
+                opacity: .8
+            }
+
+            50% {
+                transform: scale(1.25);
+                opacity: 1
+            }
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 12px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid var(--surface-border);
+            background: rgba(255, 255, 255, .04);
+            color: var(--text-primary);
+            white-space: nowrap;
+            transition: all .2s ease
+        }
+
+        .ecosystem-row {
+            padding: 20px 24px;
+            border-radius: 16px;
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-align: center;
+            backdrop-filter: blur(12px)
+        }
+
+        .ecosystem-title {
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 800
+        }
+
+        .ecosystem-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%
+        }
+
+        .ecosystem-item {
+            padding: 11px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .035);
+            border: 1px solid var(--surface-border);
+            color: var(--text-primary);
+            font-size: .88rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .2s ease
+        }
+
+        .footer {
+            text-align: center;
+            font-size: .8rem;
+            color: var(--text-muted);
+            line-height: 1.6
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .footer .fi {
+            white-space: nowrap
+        }
+
+        .footer .fi:not(:last-child)::after {
+            content: " |";
+            margin-right: 6px;
+            opacity: .6
+        }
+
+        .footer .copy {
+            margin-top: 4px;
+            font-size: .72rem;
+            opacity: .5
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, .45);
+            text-decoration: none;
+            font-size: 30px;
+            z-index: 999;
+            transition: transform .2s ease, box-shadow .2s ease
+        }
+
+        /* ---------- Desktop / hover ---------- */
+        @media (hover:hover) {
+            .brand-logo {
+                transition: transform .3s ease
+            }
+
+            .brand-logo:hover {
+                transform: scale(1.05)
+            }
+
+            .contact-chip:hover {
+                border-color: var(--brand-cyan);
+                background: rgba(0, 210, 255, .1);
+                transform: translateY(-2px)
+            }
+
+            .hero-action:hover {
+                background: linear-gradient(135deg, #047857, #059669);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 30px rgba(5, 150, 105, .45)
+            }
+
+            .service-row:hover {
+                background: rgba(0, 210, 255, .05);
+                border-color: rgba(0, 210, 255, .2);
+                transform: translateX(4px)
+            }
+
+            .service-row:hover .service-row-arrow {
+                color: var(--brand-cyan);
+                transform: translateX(3px)
+            }
+
+            .biz-row:hover {
+                background: rgba(0, 210, 255, .06);
+                border-color: var(--brand-cyan)
+            }
+
+            .address-box:hover {
+                background: rgba(0, 210, 255, .05);
+                border-color: rgba(0, 210, 255, .35)
+            }
+
+            .nav-btn:hover {
+                border-color: var(--brand-cyan);
+                color: var(--brand-cyan);
+                background: rgba(0, 210, 255, .08)
+            }
+
+            .ecosystem-item:hover {
+                border-color: var(--brand-cyan);
+                color: var(--brand-cyan);
+                background: rgba(0, 210, 255, .05);
+                transform: translateY(-2px)
+            }
+
+            .floating-whatsapp:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 25px rgba(37, 211, 102, .6)
+            }
+        }
+
+        @media (min-width:768px) {
+            .service-grid-6 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px
+            }
+
+            .pillars-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px
+            }
+
+            .location-section {
+                flex-direction: row;
+                align-items: stretch;
+                gap: 24px
+            }
+
+            .map-embed-wrap {
+                width: 45%;
+                height: auto;
+                min-height: 280px;
+                flex-shrink: 0
+            }
+
+            .location-body {
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between
+            }
+        }
+
+        @media (min-width:1024px) {
+            .floating-whatsapp {
+                display: none
+            }
+        }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width:600px) {
+            .app-container {
+                padding: 24px 16px 48px;
+                gap: 22px
+            }
+
+            main {
+                gap: 22px
+            }
+
+            .brand-logo {
+                width: 92px;
+                margin-bottom: 8px
+            }
+
+            .brand-title {
+                font-size: 1.75rem
+            }
+
+            .brand-slogan {
+                font-size: .92rem;
+                margin-bottom: 16px
+            }
+
+            .contact-bar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                width: 100%
+            }
+
+            .contact-chip {
+                padding: 10px 6px;
+                gap: 6px;
+                font-size: .8rem
+            }
+
+            .contact-chip i {
+                font-size: .95rem
+            }
+
+            .tab-btn {
+                padding: 11px 8px;
+                font-size: .82rem;
+                gap: 6px
+            }
+
+            .hero-action {
+                padding: 14px 16px
+            }
+
+            .hero-action-left {
+                gap: 12px
+            }
+
+            .hero-action-left i {
+                font-size: 1.4rem
+            }
+
+            .pillar-card {
+                padding: 18px
+            }
+
+            .pillar-tag {
+                display: none
+            }
+
+            .pillar-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem
+            }
+
+            .pillar-title-wrap {
+                gap: 12px
+            }
+
+            .pillar-title-wrap h2 {
+                font-size: 1.02rem
+            }
+
+            .pillar-title-wrap p {
+                font-size: .78rem
+            }
+
+            .location-section {
+                padding: 18px
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            .geo-particle,
+            .status-dot,
+            .tab-panel {
+                animation: none !important
+            }
+
+            * {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cyber-bg" aria-hidden="true">
+        <div class="cyber-grid"></div>
+        <div class="glow-orb orb-top"></div>
+        <div class="glow-orb orb-bottom"></div>
+        <div id="particleContainer"></div>
+    </div>
+
+    <a href="https://wa.me/556130426739" data-wa="Olá! Gostaria de tirar uma dúvida sobre os serviços." target="_blank"
+        rel="noopener noreferrer" class="floating-whatsapp" title="Falar no WhatsApp" aria-label="Falar no WhatsApp"><i
+            class="ico ico-whatsapp"></i></a>
+
+    <div class="app-container">
+
+        <header class="header">
+            <img src="logo.png" alt="MH Infostore" class="brand-logo" width="130" height="130">
+            <h1 class="brand-title">MH Infostore</h1>
+            <p class="brand-slogan">Evolução constante para seu mundo digital</p>
+            <div class="contact-bar">
+                <a href="https://wa.me/556130426739" target="_blank" rel="noopener noreferrer" class="contact-chip"><i
+                        class="ico ico-whatsapp"></i>WhatsApp</a>
+                <a href="https://instagram.com/mhinfostore" target="_blank" rel="noopener noreferrer"
+                    class="contact-chip"><i class="ico ico-instagram"></i>Instagram</a>
+                <a href="tel:+556130426739" class="contact-chip"><i class="ico ico-phone"></i>(61) 3042-6739</a>
+                <a href="https://maps.app.goo.gl/yqJi5HXobHuqzFy96" target="_blank" rel="noopener noreferrer"
+                    class="contact-chip"><i class="ico ico-location-dot"></i>Taguatinga Norte</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="tab-wrapper">
+                <nav class="tab-nav" role="tablist" aria-label="Categorias de serviços">
+                    <button class="tab-btn" role="tab" id="tab-btn-tech" aria-controls="panel-tech" aria-selected="true"
+                        data-tab="tech"><i class="ico ico-desktop"></i>Informática & Hardware</button>
+                    <button class="tab-btn" role="tab" id="tab-btn-grafica" aria-controls="panel-grafica"
+                        aria-selected="false" tabindex="-1" data-tab="grafica"><i class="ico ico-print"></i>Gráfica &
+                        Impressão</button>
+                </nav>
+            </div>
+
+            <!-- ===== PANEL 1: INFORMÁTICA ===== -->
+            <section class="tab-panel" id="panel-tech" role="tabpanel" aria-labelledby="tab-btn-tech">
+                <a href="https://wa.me/556130426739" data-wa="Olá! Gostaria de falar com um técnico para um orçamento."
+                    target="_blank" rel="noopener noreferrer" class="hero-action">
+                    <div class="hero-action-left"><i class="ico ico-headset"></i>
+                        <div>
+                            <div>Falar com um Técnico Agora</div>
+                            <div class="hero-sub">Orçamento rápido e sem compromisso via WhatsApp</div>
+                        </div>
+                    </div>
+                    <i class="ico ico-arrow-right"></i>
+                </a>
+
+                <section class="pillar-card prominent">
+                    <div class="pillar-header">
+                        <div class="pillar-title-wrap">
+                            <div class="pillar-icon"><i class="ico ico-screwdriver-wrench"></i></div>
+                            <div>
+                                <h2>Laboratório de Manutenção & Reparos</h2>
+                                <p>Assistência técnica completa para computadores, notebooks e celulares</p>
+                            </div>
+                        </div>
+                        <span class="pillar-tag">Mais Solicitado</span>
+                    </div>
+                    <div class="service-grid-6">
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Meu computador/notebook precisa de assistência técnica/reparo."
+                            target="_blank" rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Assistência & Reparo Geral (PCs e Notebooks)</h3>
+                                <p>Diagnóstico completo, reparo em placas-mãe, fontes, troca de peças e formatação
+                                    limpa.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Meu computador/notebook está muito lento e gostaria de instalar um SSD."
+                            target="_blank" rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Upgrade de Desempenho & Instalação de SSD</h3>
+                                <p>Fim da lentidão: substituição de HD antigo por SSD de alta velocidade e expansão de
+                                    memória RAM.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Preciso recuperar arquivos de um HD/SSD/Pen Drive inacessível."
+                            target="_blank" rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Recuperação de Arquivos & Dados</h3>
+                                <p>Resgate seguro de fotos, vídeos e documentos em discos corrompidos ou danificados com
+                                    sigilo total.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Preciso de conserto/manutenção no meu celular." target="_blank"
+                            rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Manutenção de Smartphones & Tablets</h3>
+                                <p>Troca de telas, baterias, conectores de carga, botões e reparos em placas em todas as
+                                    marcas.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Gostaria de fazer uma limpeza profunda e troca de pasta térmica no meu PC/Notebook."
+                            target="_blank" rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Limpeza Profunda & Troca de Pasta Térmica</h3>
+                                <p>Desoxidação completa, aplicação de pasta térmica premium e redução de temperatura e
+                                    ruído.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/556130426739"
+                            data-wa="Olá! Meu aparelho está travando/com vírus e precisa de otimização." target="_blank"
+                            rel="noopener noreferrer" class="service-row">
+                            <div class="service-row-content">
+                                <h3>Remoção de Vírus & Otimização de Sistema</h3>
+                                <p>Eliminação de malwares, pop-ups, spywares, travamentos e otimização total do Windows
+                                    e Android.</p>
+                            </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <div class="pillars-grid">
+                    <section class="pillar-card">
+                        <div class="pillar-header">
+                            <div class="pillar-title-wrap">
+                                <div class="pillar-icon"><i class="ico ico-gamepad"></i></div>
+                                <div>
+                                    <h2>PC Gamer & Customização</h2>
+                                    <p>Projetos sob medida no DF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-list">
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de um orçamento para montagem de PC Gamer." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Montagem de PC Gamer</h3>
+                                    <p>Configurações de alto desempenho montadas sob medida e parceladas no cartão.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de personalizar o visual do meu gabinete." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Personalização Visual (Case Modding)</h3>
+                                    <p>Envelopamento em vinil, impressão em vidro temperado, cabos sleeved e cooling
+                                        temático.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="pillar-card">
+                        <div class="pillar-header">
+                            <div class="pillar-title-wrap">
+                                <div class="pillar-icon"><i class="ico ico-store"></i></div>
+                                <div>
+                                    <h2>Loja Física & Balcão</h2>
+                                    <p>Produtos e serviços imediatos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-list">
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de emitir/renovar meu Certificado Digital." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Certificado Digital (e-CPF / e-CNPJ)</h3>
+                                    <p>Emissão e renovação presencial ou remota pronta em 15 minutos para Gov.br e notas
+                                        fiscais.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739" data-wa="Olá! Gostaria de consultar produtos na loja."
+                                target="_blank" rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Peças, Periféricos & Acessórios</h3>
+                                    <p>Pen drives, cartões de memória, power banks, teclados, mouses, headsets e cabos a
+                                        pronta entrega.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <a href="https://wa.me/5561993473508"
+                    data-wa="Olá! Gostaria de um orçamento para minha empresa (manutenção de TI, impressão ou internet)."
+                    target="_blank" rel="noopener noreferrer" class="biz-row">
+                    <div class="biz-left"><i class="ico ico-building"></i>
+                        <div><strong>Para empresas</strong><span>Manutenção de TI, impressão e internet para o seu
+                                escritório</span></div>
+                    </div>
+                    <i class="ico ico-chevron-right service-row-arrow"></i>
+                </a>
+
+                <div class="trust-bar">
+                    <div class="trust-point"><i class="ico ico-shield-halved"></i> Garantia em peças e serviços</div>
+                    <div class="trust-point"><i class="ico ico-credit-card"></i> Parcelamento no cartão</div>
+                    <div class="trust-point"><i class="ico ico-lock"></i> Sigilo e segurança total</div>
+                </div>
+            </section>
+
+            <!-- ===== PANEL 2: GRÁFICA ===== -->
+            <section class="tab-panel" id="panel-grafica" role="tabpanel" aria-labelledby="tab-btn-grafica" hidden>
+                <a href="https://wa.me/556130426739" data-wa="Olá! Gostaria de um orçamento para materiais gráficos."
+                    target="_blank" rel="noopener noreferrer" class="hero-action">
+                    <div class="hero-action-left"><i class="ico ico-brush"></i>
+                        <div>
+                            <div>Solicitar Orçamento Gráfico</div>
+                            <div class="hero-sub">Envie seu arquivo ou criamos sua arte do zero</div>
+                        </div>
+                    </div>
+                    <i class="ico ico-arrow-right"></i>
+                </a>
+
+                <div class="pillars-grid">
+                    <section class="pillar-card">
+                        <div class="pillar-header">
+                            <div class="pillar-title-wrap">
+                                <div class="pillar-icon"><i class="ico ico-bullhorn"></i></div>
+                                <div>
+                                    <h2>Comunicação & Divulgação</h2>
+                                    <p>Divulgação comercial e eventos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-list">
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de um orçamento para Banners/Faixas." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Banners em Lona & Faixas</h3>
+                                    <p>Acabamento em madeira e ilhós de alta durabilidade para fachadas e feiras.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de um orçamento para Panfletos/Flyers." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Panfletos & Folders Promocionais</h3>
+                                    <p>Impressão em alta escala (1.000 a 10.000 unidades) para distribuição em massa.
+                                    </p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de um orçamento para Adesivos/Rótulos." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Adesivos, Rótulos & Vinil</h3>
+                                    <p>Vinil adesivo com meio-corte para embalagens, vitrines e personalização.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="pillar-card">
+                        <div class="pillar-header">
+                            <div class="pillar-title-wrap">
+                                <div class="pillar-icon"><i class="ico ico-address-card"></i></div>
+                                <div>
+                                    <h2>Papelaria & Identidade Visual</h2>
+                                    <p>Impressos executivos e rápidos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-list">
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Gostaria de um orçamento para Cartões de Visita." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Cartões de Visita Premium</h3>
+                                    <p>Papel couché pesado, verniz localizado e corte especial de alto padrão.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739" data-wa="Olá! Preciso de impressões laser (A4/A3)."
+                                target="_blank" rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Impressão Laser Expressa (A4 / A3)</h3>
+                                    <p>Documentos, contratos e apostilas coloridas ou P&B na hora em alta definição.</p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                            <a href="https://wa.me/556130426739"
+                                data-wa="Olá! Preciso de ajuda para criar uma arte/logotipo." target="_blank"
+                                rel="noopener noreferrer" class="service-row">
+                                <div class="service-row-content">
+                                    <h3>Criação de Arte & Logotipos</h3>
+                                    <p>Criação profissional de identidade visual, cardápios e artes para redes sociais.
+                                    </p>
+                                </div><i class="ico ico-chevron-right service-row-arrow"></i>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <a href="https://wa.me/5561993473508"
+                    data-wa="Olá! Gostaria de um orçamento para minha empresa (manutenção de TI, impressão ou internet)."
+                    target="_blank" rel="noopener noreferrer" class="biz-row">
+                    <div class="biz-left"><i class="ico ico-building"></i>
+                        <div><strong>Para empresas</strong><span>Manutenção de TI, impressão e internet para o seu
+                                escritório</span></div>
+                    </div>
+                    <i class="ico ico-chevron-right service-row-arrow"></i>
+                </a>
+
+                <div class="trust-bar">
+                    <div class="trust-point"><i class="ico ico-bolt"></i> Produção expressa</div>
+                    <div class="trust-point"><i class="ico ico-circle-check"></i> Laser de alta definição</div>
+                    <div class="trust-point"><i class="ico ico-pen-nib"></i> Criamos sua arte ou logo</div>
+                </div>
+            </section>
+
+            <section class="location-section" aria-label="Localização">
+                <div class="map-embed-wrap">
+                    <iframe title="Mapa da MH Infostore em Taguatinga Norte"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4768.370984979477!2d-48.09377072401177!3d-15.820365884823596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bccdaba3c68c1%3A0xb034cfc5cc787bf7!2sMH%20Infostore%20e%20Telecom!5e0!3m2!1spt-BR!2sus!4v1793224093263!5m2!1spt-BR!2sus"
+                        allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+
+                <div class="location-body">
+                    <h3><i class="ico ico-shop"></i>Visite Nossa Loja Física!</h3>
+
+                    <button type="button" class="address-box" id="addressBox" aria-label="Copiar endereço completo">
+                        <span class="address-line" style="display:block">QNL 24 Via 29 Lote 87, Loja 01</span>
+                        <span class="address-line" style="display:block">Tag. Norte, Brasília - DF</span>
+                        <span class="address-line" style="display:block">CEP: 72161-429</span>
+                        <span class="copy-hint"><i class="ico ico-copy"></i> Toque para copiar endereço</span>
+                        <span class="copy-toast" id="copyToast" role="status" aria-live="polite"></span>
+                    </button>
+
+                    <hr class="location-divider">
+
+                    <div class="schedule-line">
+                        <i class="ico ico-clock"></i>
+                        <div>
+                            <div>Segunda a Sexta: 08:00 às 18:00h</div>
+                            <div>Sábado: 08:00 às 14:00h</div>
+                        </div>
+                    </div>
+
+                    <div class="status-button" id="storeStatusBtn" role="status">
+                        <span class="status-dot"></span>
+                        <span id="storeStatusText">Verificando horário...</span>
+                    </div>
+
+                    <div class="nav-actions">
+                        <a href="https://maps.app.goo.gl/yqJi5HXobHuqzFy96" target="_blank" rel="noopener noreferrer"
+                            class="nav-btn"><i class="ico ico-map-location-dot"></i>Google Maps</a>
+                        <a href="https://waze.com/ul?ll=-15.820366,-48.093771&navigate=yes" target="_blank"
+                            rel="noopener noreferrer" class="nav-btn"><i class="ico ico-waze"></i>Waze</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ecosystem-row">
+                <span class="ecosystem-title">Outros Serviços do Grupo MH</span>
+                <div class="ecosystem-links">
+                    <a href="https://wa.me/5561982172808"
+                        data-wa="Olá! Gostaria de consultar a cobertura e os planos da MH Internet Fibra para meu endereço."
+                        target="_blank" rel="noopener noreferrer" class="ecosystem-item"><i class="ico ico-wifi"></i>MH
+                        Internet - Rede 100% Fibra Óptica</a>
+                    <a href="https://wa.me/5561993473508"
+                        data-wa="Olá! Gostaria de tirar dúvidas sobre os serviços da MH Consulting." target="_blank"
+                        rel="noopener noreferrer" class="ecosystem-item"><i class="ico ico-chart-line"></i>MH Consulting
+                        - Serviços Financeiros</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p><strong>MH Infostore e Telecom</strong> - Taguatinga Norte, Brasília - DF</p>
+            <p>
+                <span class="fi">WhatsApp: <a href="https://wa.me/556130426739">(61) 3042-6739</a></span>
+                <span class="fi">Manutenção: <a href="tel:+5561982823611">(61) 98282-3611</a></span>
+                <span class="fi">Internet: <a href="https://wa.me/5561982172808">(61) 98217-2808</a> / <a
+                        href="https://wa.me/556133518216">(61) 3351-8216</a></span>
+            </p>
+            <p class="copy">© 2026 Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        /* ---- Partículas ---- */
+        (function () {
+            const c = document.getElementById('particleContainer');
+            for (let i = 0; i < 18; i++) {
+                const s = document.createElement('div'), z = Math.random() * 20 + 8;
+                s.className = 'geo-particle';
+                if (Math.random() > .5) { s.style.borderRadius = '3px' } else { s.style.borderRadius = '50%' }
+                s.style.cssText += `width:${z}px;height:${z}px;left:${Math.random() * 100}%;animation-duration:${Math.random() * 12 + 10}s;animation-delay:${Math.random() * 8}s`;
+                c.appendChild(s);
+            }
+        })();
+
+        /* ---- Links do WhatsApp: monta ?text= com encodeURIComponent ----
+           O href estático (sem mensagem) continua funcionando se o JS falhar. */
+        document.querySelectorAll('a[data-wa]').forEach(a => {
+            a.href = a.getAttribute('href').split('?')[0] + '?text=' + encodeURIComponent(a.dataset.wa);
+        });
+
+        /* ---- Abas (sem poluir URL/histórico) ---- */
+        const tabs = ['tech', 'grafica'];
+        function setTab(tab) {
+            if (!tabs.includes(tab)) tab = 'tech';
+            tabs.forEach(t => {
+                const on = t === tab, b = document.getElementById('tab-btn-' + t);
+                b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+                document.getElementById('panel-' + t).hidden = !on;
+            });
+        }
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.addEventListener('click', () => { setTab(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab) });
+            b.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    const n = tabs[(tabs.indexOf(b.dataset.tab) + 1) % 2]; setTab(n); history.replaceState(null, '', '#' + n);
+                    document.getElementById('tab-btn-' + n).focus();
+                }
+            });
+        });
+        window.addEventListener('hashchange', () => setTab(location.hash.slice(1)));
+        setTab(location.hash.slice(1));
+
+        /* ---- Copiar endereço ---- */
+        document.getElementById('addressBox').addEventListener('click', () => {
+            const txt = "QNL 24 Via 29 Lote 87, Loja 01, Taguatinga Norte, Brasília - DF, CEP 72161-429";
+            const toast = document.getElementById('copyToast');
+            const done = ok => {
+                toast.textContent = ok ? 'Copiado!' : 'Não foi possível copiar';
+                toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1800);
+            };
+            const fallback = () => {
+                const t = document.createElement('textarea'); t.value = txt; t.style.position = 'fixed'; t.style.opacity = '0';
+                document.body.appendChild(t); t.select();
+                let ok = false; try { ok = document.execCommand('copy') } catch (e) { }
+                t.remove(); done(ok);
+            };
+            if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(() => done(true)).catch(fallback) }
+            else fallback();
+        });
+
+        /* ---- Status da loja (fuso de Brasília, feriados, próximo horário) ---- */
+        const HOURS = { 1: [8, 18], 2: [8, 18], 3: [8, 18], 4: [8, 18], 5: [8, 18], 6: [8, 14] }; // 0=Dom (fechado)
+        // Dias FECHADOS (AAAA-MM-DD). Confira/edite esta lista.
+        const CLOSED_DATES = [
+            '2026-11-02', // Finados
+            '2026-11-20', // Consciência Negra
+            '2026-11-30', // Dia do Evangélico (DF)
+            '2026-12-24', '2026-12-25', '2026-12-31', // confirme Natal/Ano Novo
+            '2027-01-01'
+        ];
+        const DAYS = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+        function brNow() {
+            const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map(x => [x.type, x.value]));
+            const date = `${p.year}-${p.month}-${p.day}`;
+            const dow = new Date(date + 'T12:00:00Z').getUTCDay();
+            return { date, dow, t: +p.hour + +p.minute / 60 };
+        }
+        function hh(h) { return String(h).padStart(2, '0') + 'h' }
+        function updateStoreStatus() {
+            const n = brNow(), btn = document.getElementById('storeStatusBtn'), txt = document.getElementById('storeStatusText');
+            const today = !CLOSED_DATES.includes(n.date) && HOURS[n.dow];
+            if (today && n.t >= today[0] && n.t < today[1]) {
+                btn.className = 'status-button open'; txt.textContent = 'Aberto agora · fecha às ' + hh(today[1]); return;
+            }
+            btn.className = 'status-button';
+            if (today && n.t < today[0]) { txt.textContent = 'Fechado · abre hoje às ' + hh(today[0]); return }
+            for (let i = 1; i <= 14; i++) {
+                const d = new Date(n.date + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + i);
+                const iso = d.toISOString().slice(0, 10), dw = d.getUTCDay();
+                if (HOURS[dw] && !CLOSED_DATES.includes(iso)) {
+                    const when = i === 1 ? 'amanhã' : DAYS[dw] + (dw > 0 && dw < 6 ? '-feira' : '');
+                    txt.textContent = 'Fechado · abre ' + when + ' às ' + hh(HOURS[dw][0]); return;
+                }
+            }
+            txt.textContent = 'Fechado no momento';
+        }
+        updateStoreStatus(); setInterval(updateStoreStatus, 60000);
+    </script>
+</body>
+
+</html>
